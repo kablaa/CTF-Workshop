@@ -23,7 +23,7 @@ Otherwise you will have to Google for the installation instructions specific to 
     
 ###Level 2: 
 
-buffer_overflow**
+**buffer_overflow**
 
 ###Level 3: 
 
