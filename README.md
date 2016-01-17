@@ -7,7 +7,7 @@ This is a repository of challenges designed to introduce you to entry level bina
 
 To get gcc-multilib on Ubuntu, you may run:
 
-    sudo apt-get install gcc-miltilib
+    sudo apt-get install gcc-multilib
 
 Otherwise you will have to Google for the installation instructions specific to your distro.
 
