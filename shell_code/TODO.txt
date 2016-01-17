@@ -1,0 +1,3 @@
+These challenges will require you to inject and execute shellcode. 
+
+you can fine 32 bit shell code at 
