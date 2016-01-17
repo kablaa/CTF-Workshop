@@ -3,9 +3,9 @@
 This is a repository of challenges designed to introduce you to entry level binary exploitation. In each Directory you will find a TODO.txt. These files will explain the type of challenge that directory is associated with and in which order you should solve the challenges.
 
 **Requirements**:
-    gcc-multilib
+    Linux, gcc, and gcc-multilib to run and create 32 bit executables.
 
-On Ubuntu, you may run:
+To get gcc-multilib on Ubuntu, you may run:
 
     sudo apt-get install gcc-miltilib
 
@@ -19,17 +19,17 @@ Otherwise you will have to Google for the installation instructions specific to 
 
 ###Level 1:
 
-    **reversing**
+**reversing**
     
 ###Level 2: 
 
-    **buffer_overflow**
+buffer_overflow**
 
 ###Level 3: 
 
-    **ROP**
+**ROP**
 
 ###Level 4:
 
-    **shell_code**
+**shell_code**
 
