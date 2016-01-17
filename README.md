@@ -15,8 +15,7 @@ Otherwise you will have to Google for the installation instructions specific to 
 
     git clone https://github.com/kablaa/CTF-Workshop.git ~/Workshops
     cd ~/Workshops && make
-    
-    make
+ 
 
 
 ###Level 1:
