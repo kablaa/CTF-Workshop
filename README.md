@@ -14,7 +14,7 @@ Otherwise you will have to Google for the installation instructions specific to 
 **Setup**:
     simply run 
     
-    cd CTF-Workshop && make
+    make
 
 
 ###Level 1:
