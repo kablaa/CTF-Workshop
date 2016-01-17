@@ -12,7 +12,9 @@ On Ubuntu, you may run:
 Otherwise you will have to Google for the installation instructions specific to your distro.
 
 Setup:
-    run: make
+    simply run 
+    
+    make
 
 
 Level 1:
