@@ -2,7 +2,7 @@
 
 This is a repository of challenges designed to introduce you to entry level binary exploitation. In each Directory you will find a TODO.txt. These files will explain the type of challenge that directory is associated with and in which order you should solve the challenges.
 
-Requirements:
+**Requirements**:
     gcc-multilib
 
 On Ubuntu, you may run:
@@ -11,25 +11,25 @@ On Ubuntu, you may run:
 
 Otherwise you will have to Google for the installation instructions specific to your distro.
 
-Setup:
+**Setup**:
     simply run 
     
     make
 
 
-#Level 1:
+##Level 1:
 
 reversing
     
-#Level 2: 
+##Level 2: 
 
 buffer_overflow
 
-#Level 3: 
+##Level 3: 
 
 ROP
 
-#Level 4:
+##Level 4:
 
 shell_code
 
