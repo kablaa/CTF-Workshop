@@ -78,7 +78,7 @@ Reversing binaries in inherently difficult, and learning to do it efficiently ta
 
 [http://github.com/kablaa/CTF-Workshop](http://github.com/kablaa/CTF-Workshop)
 
-After you have cloned the repository, read the README file, follow the setup instructions, and navigate to the _reversing_ directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackme.md](www.crackmes.md) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
+After you have cloned the repository, read the README file, follow the setup instructions, and navigate to the _reversing_ directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackme.md](http://www.crackmes.md) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
 
 ## 4\. Python Scripting
 
