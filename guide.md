@@ -70,7 +70,7 @@ Performing Dynamic Analysis involves examining and attempting to understand the 
 
 #### GDB-PEDA
 
-PEDA stands for Python Exploit Development Assistance. This tool will make your life exceptionally easier during the debugging process. You can clone it from the [github repository](https://github.com/longld/peda) and follow the installation instructions on the README. For more information on PEDA, check out [this](http://security.cs.pub.ro/hexcellents/wiki/kb/toolset/peda) tutorial. Note that GDB requires Python version 2.x, so if you are currently using Python 3.x, you will have to switch your version.
+PEDA stands for Python Exploit Development Assistance. This tool will make your life exceptionally easier during the debugging process. You can clone it from the [github repository](https://github.com/longld/peda) and follow the installation instructions on the README. For more information on PEDA, check out [this](http://security.cs.pub.ro/hexcellents/wiki/kb/toolset/peda) tutorial. Note that PEDA requires Python version 2.x, so if you are currently using Python 3.x, you will have to switch your version.
 
 ### 3.3 Practice
 
