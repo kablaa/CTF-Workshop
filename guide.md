@@ -37,7 +37,7 @@ We suggest getting a virtual machine. Learning your way around the Linux environ
 
 In theory, setting up an Ubuntu virtual machine should be relatively easy; however, you may encounter one of several bugs or errors due to no fault of your own. Because every situation is different, we will not be able to enumerate every possible challenge you may come across while setting up your VM. As with everything else in Computer Science, [Google](http://www.google.com) is your best friend. Make sure to read all errors carefully and to search for any error codes.
 
-The first thing you need to do is [download](http://www.virtualbox.org) some vitalization software. The next thing you will need is a [.iso file](www.ubuntu.com/download/desktop). Once you have successfully acquired both of those things, you can follow one of several [tutorials](https://jtreminio.com/2012/04/setting-up-an-ubuntu-vm-step-by-step/) to get your VM up and running.
+The first thing you need to do is [download](http://www.virtualbox.org) some vitalization software. The next thing you will need is a [.iso file](http://www.ubuntu.com/download/desktop). Once you have successfully acquired both of those things, you can follow one of several [tutorials](https://jtreminio.com/2012/04/setting-up-an-ubuntu-vm-step-by-step/) to get your VM up and running.
 
 #### Virtualbox Guest Additions
 
