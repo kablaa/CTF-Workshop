@@ -26,9 +26,9 @@ Pretty much any CTF worth it's salt is going to require a working knowledge of [
 
 When it comes to getting Linux, you basically you have three options:
 
-                1) Wipe your current OS and replace it with Linux,
-                2) Dual boot your Current OS with Linux, or
-                3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine). 
+  1) Wipe your current OS and replace it with Linux,
+  2) Dual boot your Current OS with Linux, or
+  3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine). 
             
 
 We suggest getting a virtual machine. Learning your way around the Linux environment can be a daunting task if you are new to computers or are not familiar with using a terminal, so having a disposable system on which you can practice and experiment is incredibly advantageous.
@@ -64,8 +64,8 @@ Performing Dynamic Analysis involves examining and attempting to understand the 
 #### GDB
 
 [GDB](https://www.gnu.org/software/gdb/) is the standard for debugging Linux executables. While learning GDB can be a daunting task for beginners, it is an incredibly powerful tool. In addition to this guide, which will be going over the most commonly used commands, there are several [tutorials](http://www.unknownroad.com/rtfm/gdbtut/) available for reference and practice. If it does not already come pre-installed on your distro, you can usually get it from an official repository. On Ubuntu, simply run
-  
-  sudo apt-get install gdb
+
+      sudo apt-get install gdb
                  
 
 #### GDB-PEDA
