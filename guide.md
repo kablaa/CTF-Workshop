@@ -25,11 +25,11 @@ Normally, players will specialize in one of these categories. Although it is pos
 Pretty much any CTF worth it's salt is going to require a working knowledge of [Linux](https://en.wikipedia.org/wiki/Linux). Binary exploitation challenges in particular are almost exclusively limited to the Linux environment. What is Linux you ask? Well, it's an operating System. However, unlike Windows or the Apple OS, Linux is [open source](https://en.wikipedia.org/wiki/Open_source), so it's completely free! Also, because Linux is open source, developers have the opportunity to create various styles or flavors of Linux. These styles of Linux are referred to as Distributions. We recommend getting [Ubuntu](http://www.ubuntu.com), as it is the most popular and beginner friendly distro.
 
 When it comes to getting Linux, you basically you have three options:
-
+  <pre>
   1) Wipe your current OS and replace it with Linux,
   2) Dual boot your Current OS with Linux, or
   3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine). 
-            
+  </pre>          
 
 We suggest getting a virtual machine. Learning your way around the Linux environment can be a daunting task if you are new to computers or are not familiar with using a terminal, so having a disposable system on which you can practice and experiment is incredibly advantageous.
 
