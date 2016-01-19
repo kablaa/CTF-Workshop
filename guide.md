@@ -26,10 +26,10 @@ Pretty much any CTF worth it's salt is going to require a working knowledge of [
 
 When it comes to getting Linux, you basically you have three options:
 
-<pre>                1) Wipe your current OS and replace it with Linux,
+                1) Wipe your current OS and replace it with Linux,
                 2) Dual boot your Current OS with Linux, or
                 3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine). 
-            </pre>
+            
 
 We suggest getting a virtual machine. Learning your way around the Linux environment can be a daunting task if you are new to computers or are not familiar with using a terminal, so having a disposable system on which you can practice and experiment is incredibly advantageous.
 
