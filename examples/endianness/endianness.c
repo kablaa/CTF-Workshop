@@ -9,7 +9,7 @@ int main(int argc, const char *argv[])
 
     int i;
     //here we are assigning a character pointer to the address of an integer. When we increment the pointer, it will be incremented by one byte, because that is the size of a character. 
-    char *p = &x;
+    char *p = (char*)&x;
     for (i = 0; i < 4; i++,p++) {
         printf("%c",(char)*p);
     }
