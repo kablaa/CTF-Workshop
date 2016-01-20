@@ -11,3 +11,8 @@ ALL:
 	gcc -m32 -fno-stack-protector -z execstack shell_code/fsv/fsv.c -o shell_code/fsv/fsv 
 	gcc -m32 -fno-stack-protector -z execstack shell_code/shell/shell.c -o shell_code/shell/shell 
 	gcc -m32 -fno-stack-protector -z execstack shell_code/shell2/shell2.c -o shell_code/shell2/shell2 
+	gcc scripting/script1/script1.c -o scripting/script1/script1
+	gcc scripting/script2/script2.c -o scripting/script2/script2
+	gcc scripting/script3/script3.c -o scripting/script3/script3
+	gcc examples/endianness/endianness.c -o examples/endianness/endianness
+	gcc examples/sockets/echo.c	-o examples/sockets/echo
