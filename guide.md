@@ -82,19 +82,19 @@ After you have cloned the repository, read the README file, follow the setup ins
 
 ## 4\. Python Scripting
 
-### 4.1 Hexadecimal Values
-
-#### struct.pack()
-
-#### pwntools
-
-### 4.2 Sockets
+### 4.1 Sockets
 
 #### Sockets in Python
 
 #### Testing with SoCat and NetCat
 
-### 4.3 Python and GDB
+### 4.2 Python and GDB
+
+### 4.3 Hexadecimal Values
+
+#### struct.pack()
+
+#### pwntools
 
 # Get Hacking
 
