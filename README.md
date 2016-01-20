@@ -3,7 +3,7 @@
 This is a repository of challenges designed to introduce you to entry level binary exploitation. In each Directory you will find a TODO.txt. These files will explain the type of challenge that directory is associated with and in which order you should solve the challenges.
 
 **Requirements**:
-    Linux, gcc, and gcc-multilib to run and create 32 bit executables.
+    Linux, gcc, socat, and gcc-multilib to run and create 32 bit executables.
 
 To get gcc-multilib on Ubuntu, you may run:
 
