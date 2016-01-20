@@ -6,7 +6,7 @@ These are scripting challenges. In each directory, you will find a run.sh file. 
 
 For each challenge, open up a terminal and run the run.sh script. Then open up another terminal and write a python script that will connect to the socket, recieve a line, and send the proper input through the socket. Your python scripts should have the lines 
 
-HOST = localhost 
+HOST = 'localhost' 
 PORT = 1234
 
 remember: you have to add a new line character at the end of your payload
