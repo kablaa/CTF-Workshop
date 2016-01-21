@@ -57,6 +57,16 @@ Learning Assembly is probably the most difficult and time consuming challenge fo
 
 ### 3.1 Static Analysis
 
+#### Strings
+`strings` is a standard tool for most linux systems that allows you to search for all strings within a particular file. This is very handy for finding bits and pieces of static data within a binary, as you do not have to search for it by hand in a hex editor. For options and how to use them, `man strings` will tell you everything you need to know (really, its an easy tool to use).
+
+#### File
+`file` is a tool that attempts to provide basic information regarding what type of file you provide it. This can be helpful for identifying how to approach a particular binary. An example can be seen below, where we run it against a basic executable:
+```
+redacted@ubuntu:~$ file a.out
+a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=beb27b3da4fc2e516f2e0279f5c83b4e046fad5f, not stripped
+```
+
 ### 3.2 Dynamic Analysis
 
 Performing Dynamic Analysis involves examining and attempting to understand the inner workings of a binary while it is being run. This process usually involves using a [debugger](https://en.wikipedia.org/wiki/Debugger) to examine the states of registers, the stack, and the program flow at certain points during execution.
