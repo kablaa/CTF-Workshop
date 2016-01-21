@@ -67,6 +67,9 @@ redacted@ubuntu:~$ file a.out
 a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=beb27b3da4fc2e516f2e0279f5c83b4e046fad5f, not stripped
 ```
 
+#### Objdump
+`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -M intel <input file name> > <output file>`. 
+
 ### 3.2 Dynamic Analysis
 
 Performing Dynamic Analysis involves examining and attempting to understand the inner workings of a binary while it is being run. This process usually involves using a [debugger](https://en.wikipedia.org/wiki/Debugger) to examine the states of registers, the stack, and the program flow at certain points during execution.
