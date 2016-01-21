@@ -1,8 +1,5 @@
 These challenges will require you to inject and execute shellcode.
 
-you can fine 32 bit shell code at
-
-  murrica.us/files/shell.py
 
 chal 1: shell
 chal 2: shell2
