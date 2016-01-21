@@ -68,7 +68,8 @@ a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked 
 ```
 
 #### Objdump
-`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -M intel <input file name> > <output file>`. 
+`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -d -M intel <input file name> > <output file>`.
+The output file shold have a `.asm` extention. After you have decompiled the binary, you may open up the output file in your favorite text editor. Then search for the `<main>`function.
 
 ### 3.2 Dynamic Analysis
 
