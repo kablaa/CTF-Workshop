@@ -28,7 +28,7 @@ When it comes to getting Linux, you basically you have three options:
   <pre>
   1) Wipe your current OS and replace it with Linux,
   2) Dual boot your Current OS with Linux, or
-  3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine). 
+  3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine).
   </pre>          
 
 We suggest getting a virtual machine. Learning your way around the Linux environment can be a daunting task if you are new to computers or are not familiar with using a terminal, so having a disposable system on which you can practice and experiment is incredibly advantageous.
@@ -51,7 +51,7 @@ If you successfully get your virtual machine up and running, you may notice that
 
 Learning Assembly is probably the most difficult and time consuming challenge for noobies. It can be incredibly intimidating to see hundreds of lines of low level system instructions. But take heart! The truth is, while reading and understanding Assembly can be very time consuming and tedious, it's not very complicated. There are really only a handful of instructions that you need to know off the top of your head. The real challenge is understanding and being able to visualize the stack. This is a topic that is disgracefully glossed over by most introductory programming classes and tutorials. However, with practice and patients, you will find that reading assembly can become almost second nature.
 
-[Here](https://docs.google.com/presentation/d/1gPUs24mPspY58yv0XURQ6Kl05n6qyM5kiGRQf58d7QY/pub?start=false&loop=false&delayms=3000) is small introduction to assembly and the stack. Before continuing with this guide, please study and do your best to understand each slide. Once you have read through the slides, go to [this](https://gcc.godbolt.org/) site and try decompiling some programs. Make sure to set the compiler type to `x86 gcc` and the syntax to `Intel` Start off with a simple `hello_world` program. Once you feel you understand what is happening in the assembly, try writing a program with some if-then statements and loops. While at first you may feel confused, keep experimenting. Again, Google is your best friend. The best advise for learning assembly is to practice practice practice and don't give up! There is also a great [book](https://leaksource.files.wordpress.com/2014/08/hacking-the-art-of-exploitation.pdf) that introduces the basics of 32 bit assembly, static and dynamic analysis, as well as buffer overflows. Reading through this book is almost guaranteed to expedite your learning.
+[Here](https://github.com/kablaa/CTF-Workshop/blob/master/x86Assembly.pdf) is small introduction to assembly and the stack. Before continuing with this guide, please study and do your best to understand each slide. Once you have read through the slides, go to [this](https://gcc.godbolt.org/) site and try decompiling some programs. Make sure to set the compiler type to `x86 gcc` and the syntax to `Intel` Start off with a simple `hello_world` program. Once you feel you understand what is happening in the assembly, try writing a program with some if-then statements and loops. While at first you may feel confused, keep experimenting. Again, Google is your best friend. The best advise for learning assembly is to practice practice practice and don't give up! There is also a great [book](https://leaksource.files.wordpress.com/2014/08/hacking-the-art-of-exploitation.pdf) that introduces the basics of 32 bit assembly, static and dynamic analysis, as well as buffer overflows. Reading through this book is almost guaranteed to expedite your learning.
 
 ## 3\. Start Reversing Binaries
 
@@ -80,7 +80,7 @@ Performing Dynamic Analysis involves examining and attempting to understand the 
 [GDB](https://www.gnu.org/software/gdb/) is the standard for debugging Linux executables. While learning GDB can be a daunting task for beginners, it is an incredibly powerful tool. In addition to this guide, which will be going over the most commonly used commands, there are several [tutorials](http://www.unknownroad.com/rtfm/gdbtut/) available for reference and practice. If it does not already come pre-installed on your distro, you can usually get it from an official repository. On Ubuntu, simply run
 
       sudo apt-get install gdb
-                 
+
 
 #### GDB-PEDA
 
