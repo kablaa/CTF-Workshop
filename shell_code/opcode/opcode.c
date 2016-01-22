@@ -7,6 +7,7 @@ void func()
     char buf[10];
     puts("enter your name: ");
     scanf("%s", buf);
+    printf("welcome %s, you are %d years old", buf,x);
 }
 int main()
 {
