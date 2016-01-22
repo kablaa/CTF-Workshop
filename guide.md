@@ -106,21 +106,44 @@ After you have cloned the repository, read the README file, follow the setup ins
 
 #### Testing with SoCat and NetCat
 
+[more information on netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps)
+
 ### 4.2 Python and GDB
 
-### 4.3 Hexadecimal Values
+#### Testing your exploit in gdb
+    python exploit.py > in
+
+  Then, in gdb
+
+    r < in
+
+# Start Hacking Shit
+
+We have provided you with a set of practice challenges [here](https://github.com/kablaa/CTF-Workshop). These challenges are meant to be solved in the Linux environment, so boot up that virtual machine we talked about in [section 1](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#getting-started). Make sure you have `git` installed. On Ubuntu you can get it with
+
+    sudo apt-get install git
+
+Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blob/master/README.md#setup). If you have not already worked your way through the [Reverse Engineering](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#33-practice) challenges, we highly suggest you do so before continuing. Once you are sure that you are familiar with all of the concepts in [Section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#3-start-reversing-binaries), you can move on to the buffer overflow challenges.
+## 1\. Buffer Overflows
+
+
+### 1.2 What is a buffer overflow?
+
+[Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
+
+
+### 1.3 Endianness
+
+### 1.4 Hexadecimal Values in Python
 
 #### struct.pack()
 
 #### pwntools
 
-# Get Hacking
+### Bringing it all together
 
-## 1\. Buffer Overflows
-
-[bof writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html)
-
-[Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
+Read this
+[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
 
 ## 2\. ROP ROP ROP
 
