@@ -177,4 +177,4 @@ Read this
 
 #### Emulating the CTF environment
 In real life CTFs, challenges will be hosted on a remote server that you will have to connect to with a socket. So, to emulate this on your local machine
-you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting) for each challenge. You can test your exploit as we did in [section 4](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#42-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
+you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting) for each challenge. You can test your exploit as we did in [section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#32-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
