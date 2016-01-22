@@ -99,8 +99,10 @@ After you have cloned the repository, read the README file, follow the setup ins
 ## 4\. Python Scripting
 
 ### 4.1 Sockets
-
+[more information on sockets](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)
 #### Sockets in Python
+
+[tutorial](http://www.tutorialspoint.com/python/python_networking.htm)
 
 #### Testing with SoCat and NetCat
 
