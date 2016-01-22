@@ -126,7 +126,7 @@ Reversing binaries in inherently difficult, and learning to do it efficiently ta
 
 ## 2. Basic Scripting
 
- Your first task is to practice your scripting skills. Navigate to the _scripting_ directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
+ Your next task is to practice your scripting skills. Navigate to the _scripting_ directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
 
       sudo apt-get install socat
 
