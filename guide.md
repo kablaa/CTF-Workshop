@@ -123,31 +123,53 @@ We have provided you with a set of practice challenges [here](https://github.com
 
     sudo apt-get install git
 
-Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blob/master/README.md#setup). If you have not already worked your way through the [Reverse Engineering](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#33-practice) challenges, we highly suggest you do so before continuing. Once you are sure that you are familiar with all of the concepts in [Section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#3-start-reversing-binaries), you can move on to the buffer overflow challenges.
-## 1\. Buffer Overflows
+Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blob/master/README.md#setup). If you have not already worked your way through the [Reverse Engineering](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#33-practice) challenges, we highly suggest you do so before continuing. Once you are sure that you are familiar with all of the concepts in [Section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#3-start-reversing-binaries), you can move on to the other challenges.
 
 
-### 1.2 What is a buffer overflow?
+## 1. Basic Scripting
+
+ Your first task is to practice your scripting skills. Navigate to the _scripting_ directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
+
+      sudo apt-get install socat
+
+
+Them, in the directory associated with the challenge you are working on, run the command
+
+    echo "socat -v tcp-l:1234,fork exec:'./<name_of_challenge>' " > run.sh
+
+where `<name_of_challenge>` is the name of the binary you are currently working on. Then run
+
+     chmod +x run.sh
+    ./run.sh
+
+You will notice that nothing happens. That is because your script is listening on port 1234. Now, you can minimize that terminal and open up a new one. From that terminal, navigate to the challenge directory and create an `exploit.py` with the lines
+
+    HOST = 'localhost'
+    PORT = 1234
+
+  Your python script should open a socket connection to `HOST` on `PORT`. Each challenge will require you to send and receive data to and from the socket. From here on out, you will perform your exploits by sending and receiving data with a python script.
+
+## 2. Buffer Overflows
+
+
+### 2.2 What is a buffer overflow?
 
 [Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
 
-### 1.3 Endianness
+### 2.3 Endianness
 
-### 1.4 Hexadecimal Values in Python
+### What is Endianness
+
+
+### Why is Endianness Important?
+
+### 2.4 Hexadecimal Values in Python
 
 #### struct.pack()
 
 #### pwntools
 
-### 1.5 Bringing it all together
+### 2.5 Bringing it all together
 
 Read this
 [writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
-
-To simulate the environment of a real CTF, in the director associated with the challenge you are working on, run the command
-
-    echo "socat -v tcp-l:1234,fork exec:'<name_of challenge>' " > run.sh 
-
-## 2\. ROP ROP ROP
-
-## 3\. Shellcode
