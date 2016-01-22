@@ -61,13 +61,12 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
 ### 3.1 Sockets
 [more information on sockets](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)
+
+[netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps)
+
 #### Sockets in Python
 
 [tutorial](http://www.tutorialspoint.com/python/python_networking.htm)
-
-#### Testing with SoCat and NetCat
-
-[more information on netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps)
 
 ### 3.2 Python and GDB
 
