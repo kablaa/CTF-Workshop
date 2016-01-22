@@ -131,7 +131,6 @@ Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blo
 
 [Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
 
-
 ### 1.3 Endianness
 
 ### 1.4 Hexadecimal Values in Python
@@ -140,10 +139,14 @@ Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blo
 
 #### pwntools
 
-### Bringing it all together
+### 1.5 Bringing it all together
 
 Read this
 [writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
+
+To simulate the environment of a real CTF, in the director associated with the challenge you are working on, run the command
+
+    echo "socat -v tcp-l:1234,fork exec:'<name_of challenge>' " > run.sh 
 
 ## 2\. ROP ROP ROP
 
