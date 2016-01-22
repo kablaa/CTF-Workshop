@@ -111,7 +111,7 @@ After you have cloned the repository, read the README file, follow the setup ins
 ### 4.2 Python and GDB
 
 #### Testing your exploit in gdb
-    python exploit.py > in
+    python test.py > in
 
   Then, in gdb
 
@@ -158,8 +158,7 @@ You will notice that nothing happens. That is because your script is listening o
 
 ### 2.3 Endianness
 
-### What is Endianness
-
+### What is Endianness?
 
 ### Why is Endianness Important?
 
@@ -172,4 +171,4 @@ You will notice that nothing happens. That is because your script is listening o
 ### 2.5 Bringing it all together
 
 Read this
-[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
+[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges. For each challenge, create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting). You can test your exploit as we did in [section 4](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#42-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
