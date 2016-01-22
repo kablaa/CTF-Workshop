@@ -149,6 +149,8 @@ You will notice that nothing happens. That is because your script is listening o
 
   Your python script should open a socket connection to `HOST` on `PORT`. Each challenge will require you to send and receive data to and from the socket. From here on out, you will perform your exploits by sending and receiving data with a python script.
 
+  You can find an example of an echo service, a python script that will communicate with it, and a run.sh file in the _examples_ directory.
+
 ## 2. Buffer Overflows
 
 
@@ -159,6 +161,8 @@ You will notice that nothing happens. That is because your script is listening o
 ### 2.3 Endianness
 
 ### What is Endianness?
+
+You can find an example demonstrating Endianness in the _examples_ directory.
 
 ### Why is Endianness Important?
 
@@ -171,4 +175,8 @@ You will notice that nothing happens. That is because your script is listening o
 ### 2.5 Bringing it all together
 
 Read this
-[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges. For each challenge, create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting). You can test your exploit as we did in [section 4](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#42-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
+[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
+
+#### Emulating the CTF environment
+In real life CTFs, challenges will be hosted on a remote server that you will have to connect to with a socket. So, to emulate this on your local machine
+you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting) for each challenge. You can test your exploit as we did in [section 4](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#42-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
