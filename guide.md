@@ -133,7 +133,7 @@ Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blo
       sudo apt-get install socat
 
 
-Them, in the directory associated with the challenge you are working on, run the command
+Then, in the directory associated with the challenge you are working on, run the command
 
     echo "socat -v tcp-l:1234,fork exec:'./<name_of_challenge>' " > run.sh
 
