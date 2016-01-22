@@ -84,7 +84,7 @@ We have provided you with a set of practice challenges [here](https://github.com
 
     sudo apt-get install git
 
-Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blob/master/README.md#setup). If you have not already worked your way through the [Reverse Engineering](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#33-practice) challenges, we highly suggest you do so before continuing. Once you are sure that you are familiar with all of the concepts in [Section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#3-start-reversing-binaries), you can move on to the other challenges.
+Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blob/master/README.md#setup).  Once you are sure that you are comfortable with all of the concepts in the previous sections, you can move on to the challenges.
 
 
 ## 1. Reverse Engineering
