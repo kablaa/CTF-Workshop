@@ -57,9 +57,9 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
 
 
-## 4\. Python Scripting
+## 3. Python Scripting
 
-### 4.1 Sockets
+### 3.1 Sockets
 [more information on sockets](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)
 #### Sockets in Python
 
@@ -69,7 +69,7 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
 [more information on netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps)
 
-### 4.2 Python and GDB
+### 3.2 Python and GDB
 
 #### Testing your exploit in gdb
     python test.py > in
