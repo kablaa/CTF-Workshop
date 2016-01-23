@@ -49,15 +49,46 @@ If you successfully get your virtual machine up and running, you may notice that
 
 ## 2\. Learn Yo-Self Some Assembly
 
-Learning Assembly is probably the most difficult and time consuming challenge for noobies. It can be incredibly intimidating to see hundreds of lines of low level system instructions. But take heart! The truth is, while reading and understanding Assembly can be very time consuming and tedious, it's not very complicated. There are really only a handful of instructions that you need to know off the top of your head. The real challenge is understanding and being able to visualize the stack. This is a topic that is disgracefully glossed over by most introductory programming classes and tutorials. However, with practice and patients, you will find that reading assembly can become almost second nature.
+Learning [Assembly](http://www.swansontec.com/sprogram.html) is probably the most difficult and time consuming challenge for noobies. It can be incredibly intimidating to see hundreds of lines of low level system instructions. But take heart! The truth is, while reading and understanding Assembly can be very time consuming and tedious, it's not very complicated. There are really only a handful of instructions that you need to know off the top of your head. The real challenge is understanding and being able to visualize the stack. This is a topic that is disgracefully glossed over by most introductory programming classes and tutorials. However, with practice and patients, you will find that reading assembly can become almost second nature.
 
 [Here](https://github.com/kablaa/CTF-Workshop/blob/master/x86Assembly.pdf) is small introduction to assembly and the stack. Before continuing with this guide, please study and do your best to understand each slide. Once you have read through the slides, go to [this](https://gcc.godbolt.org/) site and try decompiling some programs. Make sure to set the compiler type to `x86 clang 3.7.1`, put `-m32`in the compiler options box,  and set the syntax to `Intel` Start off with a simple `hello_world` program. Once you feel you understand what is happening in the assembly, try writing a program with some if-then statements and loops. While at first you may feel confused, keep experimenting.
 
 Again, Google is your best friend. The best advise for learning assembly is to practice practice practice and don't give up! There is also a great [book](https://leaksource.files.wordpress.com/2014/08/hacking-the-art-of-exploitation.pdf) that introduces the basics of 32 bit assembly, static and dynamic analysis, as well as buffer overflows. Reading through this book is almost guaranteed to expedite your learning.
 
-## 3\. Start Reversing Binaries
 
-### 3.1 Static Analysis
+
+## 3. Python Scripting
+
+### 3.1 Sockets
+[more information on sockets](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)
+
+[netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps)
+
+#### Sockets in Python
+
+[tutorial](http://www.tutorialspoint.com/python/python_networking.htm)
+
+### 3.2 Python and GDB
+
+#### Testing your exploit in gdb
+    python test.py > in
+
+  Then, in gdb
+
+    r < in
+
+# Start Hacking Shit
+
+We have provided you with a set of practice challenges [here](https://github.com/kablaa/CTF-Workshop). These challenges are meant to be solved in the Linux environment, so boot up that virtual machine we talked about in [section 1](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#getting-started). Make sure you have `git` installed. On Ubuntu you can get it with
+
+    sudo apt-get install git
+
+Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blob/master/README.md#setup).  Once you are sure that you are comfortable with all of the concepts in the previous sections, you can move on to the challenges.
+
+
+## 1. Reverse Engineering
+
+### 1.1 Static Analysis
 
 #### Strings
 `strings` is a standard tool for most linux systems that allows you to search for all strings within a particular file. This is very handy for finding bits and pieces of static data within a binary, as you do not have to search for it by hand in a hex editor. For options and how to use them, `man strings` will tell you everything you need to know (really, its an easy tool to use).
@@ -73,13 +104,13 @@ a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked 
 `objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -d -M intel <input file name> > <output file>`.
 The output file shold have a `.asm` extention. After you have decompiled the binary, you may open up the output file in your favorite text editor. Then, search for the `<main>`function.
 
-### 3.2 Dynamic Analysis
+### 1.2 Dynamic Analysis
 
 Performing Dynamic Analysis involves examining and attempting to understand the inner workings of a binary while it is being run. This process usually involves using a [debugger](https://en.wikipedia.org/wiki/Debugger) to examine the states of registers, the stack, and the program flow at certain points during execution.
 
 #### GDB
 
-[GDB](https://www.gnu.org/software/gdb/) is the standard for debugging Linux executables. While learning GDB can be a daunting task for beginners, it is an incredibly powerful tool. In addition to this guide, which will be going over the most commonly used commands, there are several [tutorials](http://www.unknownroad.com/rtfm/gdbtut/) available for reference and practice. If it does not already come pre-installed on your distro, you can usually get it from an official repository. On Ubuntu, simply run
+[GDB](https://www.gnu.org/software/gdb/) is the standard for debugging Linux executables. While learning GDB can be a daunting task for beginners, it is an incredibly powerful tool. There are several [tutorials](http://www.unknownroad.com/rtfm/gdbtut/) available for reference and practice. If it does not already come pre-installed on your distro, you can usually get it from an official repository. On Ubuntu, simply run
 
       sudo apt-get install gdb
 
@@ -88,38 +119,61 @@ Performing Dynamic Analysis involves examining and attempting to understand the 
 
 PEDA stands for Python Exploit Development Assistance. This tool will make your life exceptionally easier during the debugging process. You can clone it from the [github repository](https://github.com/longld/peda) and follow the installation instructions on the README. For more information on PEDA, check out [this](http://security.cs.pub.ro/hexcellents/wiki/kb/toolset/peda) tutorial. Note that PEDA requires Python version 2.x, so if you are currently using Python 3.x, you will have to switch your version.
 
-### 3.3 Practice
+### 1.3 Practice
 
-Reversing binaries in inherently difficult, and learning to do it efficiently takes a great deal of time and practice. We have compiled a set of binaries that we suggest you start reversing. You can get them here:
+Reversing binaries in inherently difficult, and learning to do it efficiently takes a great deal of time and practice. We have compiled a set of binaries that we suggest you start reversing. You can find them by navigating to the _reversing_ directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackmes.de](http://www.crackmes.de) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
 
-[http://github.com/kablaa/CTF-Workshop](http://github.com/kablaa/CTF-Workshop)
+## 2. Basic Scripting
 
-After you have cloned the repository, read the README file, follow the setup instructions, and navigate to the _reversing_ directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackmes.de](http://www.crackmes.de) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
+ Your next task is to practice your scripting skills. Navigate to the _scripting_ directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
 
-## 4\. Python Scripting
+      sudo apt-get install socat
 
-### 4.1 Sockets
 
-#### Sockets in Python
+Then, in the directory associated with the challenge you are working on, run the command
 
-#### Testing with SoCat and NetCat
+    echo "socat -v tcp-l:1234,fork exec:'./<name_of_challenge>' " > run.sh
 
-### 4.2 Python and GDB
+where `<name_of_challenge>` is the name of the binary you are currently working on. Then run
 
-### 4.3 Hexadecimal Values
+     chmod +x run.sh
+    ./run.sh
+
+You will notice that nothing happens. That is because your script is listening on port 1234. Now, you can minimize that terminal and open up a new one. From that terminal, navigate to the challenge directory and create an `exploit.py` with the lines
+
+    HOST = 'localhost'
+    PORT = 1234
+
+  Your python script should open a socket connection to `HOST` on `PORT`. Each challenge will require you to send and receive data to and from the socket. From here on out, you will perform your exploits by sending and receiving data with a python script.
+
+  You can find an example of an echo service, a python script that will communicate with it, and a run.sh file in the _examples_ directory.
+
+## 3. Buffer Overflows
+
+
+### 3.2 What is a buffer overflow?
+
+[Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
+
+### 3.3 Endianness
+
+### What is Endianness?
+
+You can find an example demonstrating Endianness in the _examples_ directory.
+
+### Why is Endianness Important?
+
+### 3.4 Hexadecimal Values in Python
 
 #### struct.pack()
 
 #### pwntools
 
-# Get Hacking
+### 3.5 Bringing it all together
 
-## 1\. Buffer Overflows
+Read this
+[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
 
-[bof writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html)
-
-[Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
-
-## 2\. ROP ROP ROP
-
-## 3\. Shellcode
+#### Emulating the CTF environment
+In real life CTFs, challenges will be hosted on a remote server that you will have to connect to with a socket. So, to emulate this on your local machine
+you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting) for each challenge. You can test your exploit as we did in [section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#32-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
