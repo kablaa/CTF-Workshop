@@ -15,5 +15,6 @@ ALL:
 	gcc scripting/script1/script1.c -o scripting/script1/script1
 	gcc scripting/script2/script2.c -o scripting/script2/script2
 	gcc scripting/script3/script3.c -o scripting/script3/script3
+	gcc -m32 heap/heap1/heap1.c -o heap/heap1/heap1
 	gcc examples/endianness/endianness.c -o examples/endianness/endianness
 	gcc examples/sockets/echo.c -o examples/sockets/echo
