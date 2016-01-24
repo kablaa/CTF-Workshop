@@ -101,8 +101,7 @@ arg[0]: 0x61616161 ('aaaa')
 arg[1]: 0xffffdcf0 ("bbbbbbbbb")
 ```
 
-ureka!!
-
+Ureka!! We are overwriting the destination address being passed to the `strcpy` function. So we have the ability to perform a .got overwrite. Our plan is to first overwrite the destination address passed to `strcpy` with the `.got` address of `printf` and then use `strcpy` to overwrite that address with the address of the `winner` function.
 
 
 Let's take another look at the assembly
