@@ -27,8 +27,9 @@ Pretty much any CTF worth it's salt is going to require a working knowledge of [
 When it comes to getting Linux, you basically you have three options:
   <pre>
   1) Wipe your current OS and replace it with Linux,
-  2) Dual boot your Current OS with Linux, or
-  3) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine).
+  2) Dual boot your Current OS with Linux,
+  3) Boot Linux off of a USB drive, or
+  4) Get a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine).
   </pre>          
 
 We suggest getting a virtual machine. Learning your way around the Linux environment can be a daunting task if you are new to computers or are not familiar with using a terminal, so having a disposable system on which you can practice and experiment is incredibly advantageous.
@@ -38,6 +39,10 @@ We suggest getting a virtual machine. Learning your way around the Linux environ
 In theory, setting up an Ubuntu virtual machine should be relatively easy; however, you may encounter one of several bugs or errors due to no fault of your own. Because every situation is different, we will not be able to enumerate every possible challenge you may come across while setting up your VM. As with everything else in Computer Science, [Google](http://www.google.com) is your best friend. Make sure to read all errors carefully and to search for any error codes.
 
 The first thing you need to do is [download](http://www.virtualbox.org) some vitalization software. The next thing you will need is a [.iso file](http://www.ubuntu.com/download/desktop). Once you have successfully acquired both of those things, you can follow one of several [tutorials](https://jtreminio.com/2012/04/setting-up-an-ubuntu-vm-step-by-step/) to get your VM up and running.
+
+#### Enabling Virtualization
+Due to the infinite wisdom of many hardware manufacturers these days, you may need to enable virtualization on your motherboard.
+[here](http://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/) is a tutorial on how to do that.
 
 #### Virtualbox Guest Additions
 
