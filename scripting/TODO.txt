@@ -1,12 +1,1 @@
-These challenges require socat to be installed. On ubuntu, you can just run:
-
-    sudo apt-get install socat
-
-These are scripting challenges. In each directory, you will find a run.sh file. This script will create a socket and listen on port 1234. When a connection is made to the socket, the executable in that directory will be run and you may interect with it through the socket. 
-
-For each challenge, open up a terminal and run the run.sh script. Then open up another terminal and write a python script that will connect to the socket, recieve a line, and send the proper input through the socket. Your python scripts should have the lines 
-
-HOST = 'localhost' 
-PORT = 1234
-
-remember: you have to add a new line character at the end of your payload
+See the guide for a description of these challenges.

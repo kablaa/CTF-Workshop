@@ -20,13 +20,13 @@ void pass1(char *input)
 {
    if(!strncmp(input,"iamahacker",10))
    {
-        pass2(input); 
+        pass2(input);
    }
    else
        puts("try again");
 }
 
-int main(int argc, const char *argv[])
+int main()
 {
     char buff[64];
     read(0,buff,sizeof(buff));

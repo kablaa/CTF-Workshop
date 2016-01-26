@@ -6,6 +6,7 @@ This is a guide that was written with intention of taking you through the proces
 
 This guide assumes that you have a working knowledge of the C programming language. We do not expect you to be an enterprise level developer; however, we will assume a working knowledge of functions, variables, pointers, etc. A basic understanding of [Python](http://www.python.org) is also highly recommended. While we will be going over the aspects of Python scripting that are most important to CTFs, reading through a few [tutorials](http://www.tutorialspoint.com/python) will be extremely helpful. If you have never programmed before, or do not feel you are comfortable with these concepts, the great interwebs is full of comprehensive [tutorials and guides](http://www.tutorialspoint.com/computer_programming/). A computer capable of handling a Linux virtual machine is also required.
 
+
 ### What is Capture the Flag?
 
 CTFs are competitions in which players are given challenges related to several fields of cyber security. [Challenges](http://www.github.com/ctfs) usually fall into one of the following categories:
@@ -64,6 +65,11 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
 ## 3. Python Scripting
 
+ Knowing at least one scripting language will make your life exceptionally easier no matter which field of Computer Science you chose to pursue. Playing CTFs without knowing one is almost impossible. Before we get into Python, let's get this out of the way...
+
+### I Don't Care If You Think Ruby is Better
+ We chose to go over python because we fucking felt like it. If you have a problem with that, you can open up EMACS, write your own guide in LaTeX, and talk about how much you love Ruby there. Ok, now that that's over with let talk about sockets.  
+
 ### 3.1 Sockets
 [more information on sockets](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)
 
@@ -82,6 +88,8 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
     r < in
 
+
+
 # Start Hacking Shit
 
 We have provided you with a set of practice challenges [here](https://github.com/kablaa/CTF-Workshop). These challenges are meant to be solved in the Linux environment, so boot up that virtual machine we talked about in [section 1](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md/#getting-started). Make sure you have `git` installed. On Ubuntu you can get it with
@@ -95,8 +103,13 @@ Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blo
 
 ### 1.1 Static Analysis
 
+#### Objdump
+`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -d -M intel <input file name> > <output file>`.
+The output file shold have a `.asm` extention. After you have decompiled the binary, you may open up the output file in your favorite text editor. Then, search for the `<main>`function.
+
+
 #### Strings
-`strings` is a standard tool for most linux systems that allows you to search for all strings within a particular file. This is very handy for finding bits and pieces of static data within a binary, as you do not have to search for it by hand in a hex editor. For options and how to use them, `man strings` will tell you everything you need to know (really, its an easy tool to use).
+`strings` is a standard tool for most Linux systems that allows you to search for all strings within a particular file. This is very handy for finding bits and pieces of static data within a binary, as you do not have to search for it by hand in a hex editor. For options and how to use them, `man strings` will tell you everything you need to know (really, its an easy tool to use).
 
 #### File
 `file` is a tool that attempts to provide basic information regarding what type of file you provide it. This can be helpful for identifying how to approach a particular binary. An example can be seen below, where we run it against a basic executable:
@@ -105,9 +118,6 @@ redacted@ubuntu:~$ file a.out
 a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=beb27b3da4fc2e516f2e0279f5c83b4e046fad5f, not stripped
 ```
 
-#### Objdump
-`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -d -M intel <input file name> > <output file>`.
-The output file shold have a `.asm` extention. After you have decompiled the binary, you may open up the output file in your favorite text editor. Then, search for the `<main>`function.
 
 ### 1.2 Dynamic Analysis
 
@@ -126,11 +136,11 @@ PEDA stands for Python Exploit Development Assistance. This tool will make your 
 
 ### 1.3 Practice
 
-Reversing binaries in inherently difficult, and learning to do it efficiently takes a great deal of time and practice. We have compiled a set of binaries that we suggest you start reversing. You can find them by navigating to the _reversing_ directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackmes.de](http://www.crackmes.de) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
+Reversing binaries in inherently difficult, and learning to do it efficiently takes a great deal of time and practice. We have compiled a set of binaries that we suggest you start reversing. You can find them by navigating to the *reversing* directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackmes.de](http://www.crackmes.de) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
 
 ## 2. Basic Scripting
 
- Your next task is to practice your scripting skills. Navigate to the _scripting_ directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
+ Your next task is to practice your scripting skills. Navigate to the *scripting* directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
 
       sudo apt-get install socat
 
