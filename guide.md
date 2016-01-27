@@ -69,7 +69,7 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
 #### I Don't Care If You Think Python Sucks
 
- We chose to go over Python because we felt like it. If you have a problem with that, you can open up EMACS, write your own CTF guide in LaTeX, and talk about how much you love Ruby there. Ok, now that that's over with let talk about sockets.  
+ We chose to go over Python because we felt like it. If you have a problem with that, you can open up EMACS, write your own CTF guide in LaTeX, and talk about how much you love Ruby there. Ok, now that that's over with lets talk about sockets.  
 
 ### 3.1 Sockets
 
@@ -198,7 +198,7 @@ You will notice that nothing happens. That is because your script is listening o
 
 ## 3. Buffer Overflows
 
-A [buffer overflow](https://www.owasp.org/index.php/Buffer_overflow_attack) is one of the simplest types of binary exploits. It is usually the first thing that is taught to aspiring hackers, so it will be the first thing we go over in this guide. There are many many [examples](http://www.thegeekstuff.com/2013/06/buffer-overflow/) and [tutorials](https://www.exploit-db.com/docs/28475.pdf), and [writeups](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html) available online. My personal favorite is this
+A [buffer overflow](https://www.owasp.org/index.php/Buffer_overflow_attack) is one of the simplest types of binary exploits. It is usually the first thing that is taught to aspiring hackers, so it will be the first thing we go over in this guide. There are many many [examples](http://www.thegeekstuff.com/2013/06/buffer-overflow/), [tutorials](https://www.exploit-db.com/docs/28475.pdf), and [writeups](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html) available online. My personal favorite is this
 [interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1), which provides an excellent visualization of exactly what is happening during the exploit.
 
 We have compiled a set of practice challenges in the *buffer overflow* directory. For each challenge, use your knowledge of assembly, gdb, and Python to create your exploit and understand *exactly what is happening*. Remember, getting a shell is good, but understanding *why* you got that shell is even more important. Use gdb to step though the program one instruction at a time and try to understand exactly what is happening at each step.
@@ -210,7 +210,7 @@ We have compiled a set of practice challenges in the *buffer overflow* directory
  Now that you have a decent understanding of basic concepts, we can start making your life easer with some tools.
 #### struct.pack()
 
-If you are having problems with [endianness](http://www.geeksforgeeks.org/little-and-big-endian-mystery/), you can use `struct.pack()` to make your life easier.  We suggest reading though a few [examples](https://docs.python.org/2/library/struct.html#examples) and [tutorials](https://pymotw.com/2/struct/) better understand this function and what it does. A basic example would be
+If you are having problems with [endianness](http://www.geeksforgeeks.org/little-and-big-endian-mystery/), you can use `struct.pack()` to make your life easier.  We suggest reading though a few [examples](https://docs.python.org/2/library/struct.html#examples) and [tutorials](https://pymotw.com/2/struct/) to better understand this function and what it does. A basic example would be
 
 ```
 from struct import *
@@ -253,4 +253,4 @@ Now, you can step though the assembly and see what happens. If you are playing a
 
 ### Emulating the CTF environment
 In real life CTFs, challenges will be hosted on a remote server that you will have to connect to with a socket. So, to emulate this on your local machine
-you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting) for each challenge. You can test your exploit as we did in [section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#32-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
+you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#2-basic-scripting) for each challenge. 
