@@ -65,30 +65,57 @@ Again, Google is your best friend. The best advise for learning assembly is to p
 
 ## 3. Python Scripting
 
- Knowing at least one scripting language will make your life exceptionally easier no matter which field of Computer Science you chose to pursue. Playing CTFs without knowing one is almost impossible. Before we get into Python, let's get this out of the way...
+ Knowing at least one scripting language will make your life exceptionally easier no matter which field of Computer Science you choose to pursue. Playing CTFs without knowing one is almost impossible. Before we get into Python, let's get this out of the way...
 
-### I Don't Care If You Think Ruby is Better
- We chose to go over python because we fucking felt like it. If you have a problem with that, you can open up EMACS, write your own guide in LaTeX, and talk about how much you love Ruby there. Ok, now that that's over with let talk about sockets.  
+#### I Don't Care If You Think Python Sucks
+
+ We chose to go over Python because we felt like it. If you have a problem with that, you can open up EMACS, write your own CTF guide in LaTeX, and talk about how much you love Ruby there. Ok, now that that's over with let talk about sockets.  
 
 ### 3.1 Sockets
-[more information on sockets](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm)
 
-[netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps)
+Most CTFs are going to be hosted on a remote server. For binary challenges, the flag will typically be in the same directory as the binary. You will have to find a way to exploit the binary and get a [shell](https://en.wikipedia.org/wiki/Unix_shell). Once you have the shell, you will usually run
+
+    cat flag
+
+which will print out the contents of the flag. So how do we interact with the binary if it's on another server? The answer is [sockets](https://en.wikipedia.org/wiki/Network_socket). A socket is essentially a network connection between your computer and another computer. Because multiple processes will often require access to a socket at the same time, we use [ports](https://simple.wikipedia.org/wiki/Network_port) so that we can connect to whichever specific process we want. There are several ports that are reserved for specific processes such as [SSH](https://en.wikipedia.org/wiki/Secure_Shell) (port 22), [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) (port 25), and [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) (port 80). You can go [here](http://www.tutorialspoint.com/unix_sockets/what_is_socket.htm) for more information on networking ports.
+
+As far as CTFs go, we have what are referred to as _general purose_ ports. These are just ports that are not being used by any other service. Each challenge will be associated with a specific port. You will typically see something like
+
+```
+Challenge:
+
+someCTF.coolhackerurl.we p-6666
+```
+So what you will have to do is connect to `someCTF.coolhackerurl.we` on `port 6666`. Then, instead of the output of the binary being written to [stdout](https://en.wikipedia.org/wiki/Standard_streams), it will be sent though the socket to your computer. Likewise, you will need to send your exploit through the socket.
+
+So how do we connect to sockets? One way is to use [Netcat](https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps). Netcat is the simplest way to connect to a socket. Just run
+
+    nc someCTF.coolhackerurl.we 6666
+
+Now, it will be just like you are running the executable on your home machine. You can send input and get output just like you normally would. However, what if you want to send something that can't be typed on a keyboard, like a hexadecimal value?
 
 #### Sockets in Python
 
-[tutorial](http://www.tutorialspoint.com/python/python_networking.htm)
-
-### 3.2 Python and GDB
-
-#### Testing your exploit in gdb
-    python test.py > in
-
-  Then, in gdb
-
-    r < in
+Python will allow you to connect to a socket on a port and send whatever data you want, as well as receive data through the socket. Before continuing with this guide, read though a few [tutorials](http://www.tutorialspoint.com/python/python_networking.htm) on socket programming in Python. Write some example programs and test out the various types of things you can do with sockets. Remember, you only need a very high level of understanding of sockets in order to play CTFs. So if you find yourself reading about Ethernet II on Wikipedia, you have probably gone too deep.
 
 
+###  3.2 Hexadecimal Values in Python
+
+For most buffer binary challenges, you will need to input [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) values for a variety of reasons. To do this with python you must create string of hex values and send that string to your executable. For example, in your `exploit.py`, you can write
+
+```
+myHexString = "\xde\xad\xbe\xef"
+
+print myHexString
+```
+
+and then from the command line,
+
+```
+python exploit.py | ./<binary>
+```
+
+This will [pipe](http://ryanstutorials.net/linuxtutorial/piping.php) the output of your `exploit.py` script into your binary.
 
 # Start Hacking Shit
 
@@ -104,8 +131,12 @@ Then, follow the [setup instructions](https://github.com/kablaa/CTF-Workshop/blo
 ### 1.1 Static Analysis
 
 #### Objdump
-`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is: `objdump -d -M intel <input file name> > <output file>`.
-The output file shold have a `.asm` extention. After you have decompiled the binary, you may open up the output file in your favorite text editor. Then, search for the `<main>`function.
+`objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is:
+
+`objdump -d -M intel <input file name> > dump.asm`.
+
+
+After you have decompiled the binary, you may open up `dump.asm` in your favorite text editor. Then, search for the `<main>`function.
 
 
 #### Strings
@@ -163,32 +194,63 @@ You will notice that nothing happens. That is because your script is listening o
 
   You can find an example of an echo service, a python script that will communicate with it, and a run.sh file in the _examples_ directory.
 
+
+
 ## 3. Buffer Overflows
 
+A [buffer overflow](https://www.owasp.org/index.php/Buffer_overflow_attack) is one of the simplest types of binary exploits. It is usually the first thing that is taught to aspiring hackers, so it will be the first thing we go over in this guide. There are many many [examples](http://www.thegeekstuff.com/2013/06/buffer-overflow/) and [tutorials](https://www.exploit-db.com/docs/28475.pdf), and [writeups](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html) available online. My personal favorite is this
+[interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1), which provides an excellent visualization of exactly what is happening during the exploit.
 
-### 3.2 What is a buffer overflow?
+We have compiled a set of practice challenges in the *buffer overflow* directory. For each challenge, use your knowledge of assembly, gdb, and Python to create your exploit and understand *exactly what is happening*. Remember, getting a shell is good, but understanding *why* you got that shell is even more important. Use gdb to step though the program one instruction at a time and try to understand exactly what is happening at each step.
 
-[Interactive buffer overflow](https://picoctf.com/problem-static/binary/Overflow1/overflow1.html#1)
 
-### 3.3 Endianness
 
-### What is Endianness?
+###  Making your life easier
 
-You can find an example demonstrating Endianness in the _examples_ directory.
-
-### Why is Endianness Important?
-
-### 3.4 Hexadecimal Values in Python
-
+ Now that you have a decent understanding of basic concepts, we can start making your life easer with some tools.
 #### struct.pack()
+
+If you are having problems with [endianness](http://www.geeksforgeeks.org/little-and-big-endian-mystery/), you can use `struct.pack()` to make your life easier.  We suggest reading though a few [examples](https://docs.python.org/2/library/struct.html#examples) and [tutorials](https://pymotw.com/2/struct/) better understand this function and what it does. A basic example would be
+
+```
+from struct import *
+
+myHexString = struct.pack("<I",0xdeadbeef)
+
+print myHexString
+```
+
+
 
 #### pwntools
 
-### 3.5 Bringing it all together
+[pwntools](https://github.com/Gallopsled/pwntools) is awesome. Once you start using it, you will wonder how you ever lived without it. Socket programming, packing hex values, and just about every other aspect of CTFs is made easier by this wonderful tool. For example, instead of using `struct.pack()`, you can do
 
-Read this
-[writeup](http://ehsandev.com/pico2014/binary_exploitation/overflow1.html), once you feel you understand all of the concepts, you can start working on the practice challenges. Navigate to the `buffer_overflow` directory, read the TODO.txt and work your way through the challenges.
+```
+from pwn import *
 
-#### Emulating the CTF environment
+myHexString = p32(0xdeadbeeef)
+
+print myHexString
+```
+
+To find out more, read through [the documentation](https://pwntools.readthedocs.org/en/2.2/).
+
+#### Python and GDB
+
+While being able to pipe your exploit into a binary is good, sometimes your exploit won't work and you will have no idea why. To see what is happening, from the command line you can run
+
+    python test.py > in
+    gdb ./<binary>
+
+Then, in gdb
+
+    r < in
+
+Now, you can step though the assembly and see what happens. If you are playing a [wargame](http://pwnable.kr/) and need to pass [command line arguments](http://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm), in gdb, run
+
+    r $(python -c 'print "whatever you want" ')
+
+### Emulating the CTF environment
 In real life CTFs, challenges will be hosted on a remote server that you will have to connect to with a socket. So, to emulate this on your local machine
 you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#1-basic-scripting) for each challenge. You can test your exploit as we did in [section 3](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#32-python-and-gdb). Once you understand how to solve the challenge, write your exploit in `exploit.py` and use the socket to send your payload.
