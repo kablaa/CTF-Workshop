@@ -40,20 +40,7 @@ This is the main bug in this program. Because the dev wrote `sizeof(auth)` and n
 
 
 
-```
-strcpy(auth->name, line + 5);
-```
-```
-80486af:	8d 85 78 ff ff ff    	lea    eax,[ebp-0x88]
-80486b5:	83 c0 05             	add    eax,0x5
-80486b8:	8b 15 e8 9a 04 08    	mov    edx,DWORD PTR ds:0x8049ae8
-80486be:	83 ec 08             	sub    esp,0x8
-80486c1:	50                   	push   eax
-80486c2:	52                   	push   edx
-80486c3:	e8 a8 fd ff ff       	call   8048470 <strcpy@plt>
-```
-
-now lets see what happens with the service case
+Lets see what happens with the service case
 ```
 if(strncmp(line, "service", 6) == 0)
     service = strdup(line + 7); //this will stored on the heap
