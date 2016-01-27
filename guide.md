@@ -101,7 +101,7 @@ Python will allow you to connect to a socket on a port and send whatever data yo
 
 ###  3.2 Hexadecimal Values in Python
 
-For most buffer binary challenges, you will need to input [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) values for a variety of reasons. To do this with python you must create string of hex values and send that string to your executable. For example, in your `exploit.py`, you can write
+For most binary challenges, you will need to input [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) values for a variety of reasons. To do this with python you must create string of hex values and send that string to your executable. For example, in your `exploit.py`, you can write
 
 ```
 myHexString = "\xde\xad\xbe\xef"
@@ -253,4 +253,4 @@ Now, you can step though the assembly and see what happens. If you are playing a
 
 ### Emulating the CTF environment
 In real life CTFs, challenges will be hosted on a remote server that you will have to connect to with a socket. So, to emulate this on your local machine
-you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#2-basic-scripting) for each challenge. 
+you should create a `run.sh` script and an `exploit.py` as we did in [the last section](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md#2-basic-scripting) for each challenge.
