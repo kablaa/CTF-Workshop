@@ -96,3 +96,5 @@ if(auth->auth)
 
 
 ![A basic visualization](https://github.com/kablaa/CTF-Workshop/blob/master/writeups/heap2/heap.png)
+
+So what is happening is this: Because only 0x4 bytes are being allocated on the heap, and because `auth->auth` is at `<location of auth> + 0x20`, `service` is now located _before_ `auth->auth`. So we can overwrite the value.  
