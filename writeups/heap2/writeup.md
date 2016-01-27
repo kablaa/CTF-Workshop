@@ -33,7 +33,7 @@ auth = malloc(sizeof(auth)); // should be sizeof(struct auth)
 
 ```
 804866e:	83 ec 0c             	sub    esp,0xc
-8048671:	6a 04                	push   0x4
+8048671:	6a 04                	push   0x4 ; only 0x4 bytes!!
 8048673:	e8 08 fe ff ff       	call   8048480 <malloc@plt>
 8048678:	83 c4 10             	add    esp,0x10
 804867b:	a3 e8 9a 04 08       	mov    ds:0x8049ae8,eax
