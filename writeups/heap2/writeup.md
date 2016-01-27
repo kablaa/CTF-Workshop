@@ -93,3 +93,6 @@ if(auth->auth)
 8048759:	85 c0                	test   eax,eax
 804875b:	74 25                	je     8048782 <main+0x187>
 ```
+
+
+![A basic visualization](https://github.com/kablaa/CTF-Workshop/blob/master/writeups/heap2/heap.png)
