@@ -40,6 +40,7 @@ This is the main bug in this program. Because the dev wrote `sizeof(auth)` and n
 
 
 
+
 Lets see what happens with the service case
 ```
 if(strncmp(line, "service", 6) == 0)
