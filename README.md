@@ -19,26 +19,14 @@ Otherwise you will have to Google for the installation instructions specific to 
 
 
 
-###Level 1:
+###Level 1: **reversing**
 
-####reversing
+###Level 2: **scripting**
 
-###Level 2:
+###Level 3: **buffer_overflow**
 
-####scripting
+###Level 4: **ROP**
 
-###Level 3:
+###Level 5: **shell_code**
 
-####buffer_overflow
-
-###Level 4:
-
-####ROP
-
-###Level 5:
-
-####shell_code
-
-###Level 6:
-
-####heap
+###Level 6: **heap**
