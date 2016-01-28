@@ -18,5 +18,6 @@ ALL:
 	gcc scripting/script4/script.c -m32 -o scripting/script4/script
 	gcc -m32 heap/heap1/heap1.c -o heap/heap1/heap1
 	gcc -m32 heap/heap2/heap2.c -o heap/heap2/heap2
+	gcc -m32 heap/heap3/heap3.c -o heap/heap3/heap3
 	gcc examples/endianness/endianness.c -o examples/endianness/endianness
 	gcc examples/sockets/echo.c -o examples/sockets/echo
