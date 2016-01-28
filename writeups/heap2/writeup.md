@@ -1,6 +1,6 @@
 So the first thing we notice is a struct. We will come back to this later
 
-```code
+```C
 struct auth { //note the lack of typedef
   char name[32];
   int auth;
