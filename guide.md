@@ -103,7 +103,7 @@ Python will allow you to connect to a socket on a port and send whatever data yo
 
 For most binary challenges, you will need to input [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) values for a variety of reasons. To do this with python you must create string of hex values and send that string to your executable. For example, in your `exploit.py`, you can write
 
-```
+```py
 myHexString = "\xde\xad\xbe\xef"
 
 print myHexString
@@ -111,7 +111,7 @@ print myHexString
 
 and then from the command line,
 
-```
+```sh
 python exploit.py | ./<binary>
 ```
 
@@ -144,7 +144,7 @@ After you have decompiled the binary, you may open up `dump.asm` in your favorit
 
 #### File
 `file` is a tool that attempts to provide basic information regarding what type of file you provide it. This can be helpful for identifying how to approach a particular binary. An example can be seen below, where we run it against a basic executable:
-```
+```sh
 redacted@ubuntu:~$ file a.out
 a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=beb27b3da4fc2e516f2e0279f5c83b4e046fad5f, not stripped
 ```
@@ -212,7 +212,7 @@ We have compiled a set of practice challenges in the *buffer overflow* directory
 
 If you are having problems with [endianness](http://www.geeksforgeeks.org/little-and-big-endian-mystery/), you can use `struct.pack()` to make your life easier.  We suggest reading though a few [examples](https://docs.python.org/2/library/struct.html#examples) and [tutorials](https://pymotw.com/2/struct/) to better understand this function and what it does. A basic example would be
 
-```
+```py
 from struct import *
 
 myHexString = struct.pack("<I",0xdeadbeef)
@@ -226,7 +226,7 @@ print myHexString
 
 [pwntools](https://github.com/Gallopsled/pwntools) is awesome. Once you start using it, you will wonder how you ever lived without it. Socket programming, packing hex values, and just about every other aspect of CTFs is made easier by this wonderful tool. For example, instead of using `struct.pack()`, you can do
 
-```
+```py
 from pwn import *
 
 myHexString = p32(0xdeadbeeef)
