@@ -19,7 +19,7 @@ Otherwise you will have to Google for the installation instructions specific to 
 
 
 
-###Level 1: ***reversing***
+###Level 1: **reversing**
 
 ###Level 2: **scripting**
 
