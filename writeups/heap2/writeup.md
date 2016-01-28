@@ -14,7 +14,7 @@ char *service;
 
 
 Let's look at the auth function
-```code    
+```C    
 if(strncmp(line, "auth ", 5) == 0)
 {
     auth = malloc(sizeof(auth)); // should be sizeof(struct auth)
@@ -27,7 +27,7 @@ if(strncmp(line, "auth ", 5) == 0)
 
 and the corresponding assembly
 
-```code
+```C
 auth = malloc(sizeof(auth)); // should be sizeof(struct auth)
 ```
 
@@ -44,7 +44,7 @@ This is the main bug in this program. Because the dev wrote `sizeof(auth)` and n
 
 
 Lets see what happens with the service case.
-```code
+```C
 if(strncmp(line, "service", 6) == 0)
     service = strdup(line + 7); //this will stored on the heap
 ```
@@ -53,7 +53,7 @@ Notice that we do not have any restrictions on the amount of memory allocated.
 
 Let's take a look at the login command
 
-```code    
+```c    
 if(strncmp(line, "login", 5) == 0)
 {
   if(auth->auth)
@@ -67,7 +67,7 @@ if(strncmp(line, "login", 5) == 0)
 
 the most important line
 
-```code
+```c
 if(auth->auth)
 ```
 
