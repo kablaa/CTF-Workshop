@@ -1,4 +1,5 @@
-#CTF-Workshop ![hackucf logo](https://www.daledriggs.com/images/hackucf.png)
+![hackucf logo](https://www.daledriggs.com/images/hackucf.png)
+#CTF-Workshop 
 
 This is a repository of challenges designed to introduce you to entry level binary exploitation. In each Directory you will find a TODO.txt. These files will explain the type of challenge that directory is associated with and in which order you should solve the challenges. If you are new to CTFs, read through this [guide](https://github.com/kablaa/CTF-Workshop/blob/master/guide.md). It will tell you the basic concepts you will have to be familiar with in order to start playing and guide you through the process of learning them.
 
