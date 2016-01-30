@@ -4,7 +4,7 @@
 int main(int argc, const char *argv[])
 {
     char buf[64];
-    scanf("%s", buf);
+    fgets(buf, 64, stdin);
     printf("%s\n",buf);
     return 0;
 }
