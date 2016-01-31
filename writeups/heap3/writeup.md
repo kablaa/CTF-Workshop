@@ -1,1 +1,1 @@
-This Challenge requires you to preform [The House of Foce](http://phrack.org/issues/66/10.html) exploit. If you can solve this challeng and understand exactly why this exploit works, you can stop playing Capture the Flag, because You win.  
+This Challenge requires you to preform [The House of Foce](http://phrack.org/issues/66/10.html) exploit.
