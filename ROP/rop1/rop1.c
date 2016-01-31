@@ -6,8 +6,10 @@ void win()
     puts("you Win!\n");
     system("/bin/sh");
 }
-int main(int argc, const char *argv[])
+
+void func()
 {
+    
     int correct = 0;
     char bof[64];
 
@@ -20,5 +22,10 @@ int main(int argc, const char *argv[])
         exit(0);
     }
 
+}
+
+int main()
+{
+    func();
     return 0;
 }
