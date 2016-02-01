@@ -15,7 +15,7 @@ ALL:
 	gcc scripting/script1/script1.c -o scripting/script1/script1
 	gcc scripting/script2/script2.c -o scripting/script2/script2
 	gcc scripting/script3/script3.c -o scripting/script3/script3
-	gcc scripting/script4/script.c -m32 -o scripting/script4/script
+	gcc scripting/script4/script4.c -m32 -o scripting/script4/script4
 	gcc -m32 heap/heap1/heap1.c -o heap/heap1/heap1
 	gcc -m32 heap/heap2/heap2.c -o heap/heap2/heap2
 	gcc -m32 heap/heap3/heap3.c -o heap/heap3/heap3
