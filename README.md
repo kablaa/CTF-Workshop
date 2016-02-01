@@ -34,7 +34,7 @@ Otherwise you will have to Google for the installation instructions specific to 
 
 ###Level 7: **heap**
 
-###More recourses: 
+##More Resources: 
 
 [Smash the Stack](https://avicoder.me/2016/02/01/smashsatck-revived/)
     
