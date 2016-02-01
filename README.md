@@ -33,3 +33,7 @@ Otherwise you will have to Google for the installation instructions specific to 
 ###Level 6: **True_ROP**
 
 ###Level 7: **heap**
+
+###More recourses: 
+    [Smash the Stack](https://avicoder.me/2016/02/01/smashsatck-revived/)
+    
