@@ -10,7 +10,7 @@ class RopChain:
 
     You can initilize your ropchain with
 
-     ropChain = RopChain
+     ropChain = RopChain()
 
     There are two ways to create a rop chain:
 
