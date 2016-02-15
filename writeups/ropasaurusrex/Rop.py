@@ -18,7 +18,7 @@ class RopChain:
 
         2) explicitaly add the address of each cleanup for each link. For exlample
 
-            ropCHain.addLink(func_addr, [p1,p2,..,pn], pop*n_r)
+            ropCHain.addLink(func_addr, [p1,p2,..,pn], pppr)
 
     When you are ready to create your payload, you can get the full rop chain with
 
