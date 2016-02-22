@@ -15,7 +15,6 @@ Otherwise you will have to Google for the installation instructions specific to 
 ##Setup:
 
     git clone https://github.com/kablaa/CTF-Workshop.git ~/Workshops
-    cd ~/Workshops && make
 
 
 
