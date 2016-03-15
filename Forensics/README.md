@@ -1,7 +1,6 @@
 [![hackucf logo](https://github.com/kablaa/CTF-Workshop/blob/master/HackUCF.png)](http://www.hackucf.org)
 
 # CTF-Workshop - Forensics
-
 This is a repository of Forensics challenges designed to introduce common practices and methods used when working on CTF Forensics challenges. Within the `Challenges` directory of this folder you will find the binary files for each of the challenges. Inside of the `Writeups` directory you will find the writeups and solution files for each of the challenges.
 
 ## Requirements
