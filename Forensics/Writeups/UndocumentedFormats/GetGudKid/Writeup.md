@@ -10,7 +10,7 @@ For this challenge, all that is required is a hex editor and the ability to unzi
 ### Recon
 Initially, we are given a binary called `get_gud_kid.dat`. Taking a look at the file, we can see that it has the header `FIF`, which may exist, it may not. However, doing some googling, the format does not match any known format. Therefore we can begin looking to see if there is anything that can provide us clues to start working. Running the find strings tool in 010 editor, we can see that we have a large amount of strings found. However, there are some notable ones at the very beginning of the file:
 
-screenshot
+![strings output screenshot](https://github.com/kablaa/CTF-Workshop/blob/restructure_repository/Forensics/Writeups/UndocumentedFormats/GetGudKid/strings_output.PNG)
 
 We can see that we have `cat1.jpg.zip` to `cat7.jpg.zip` listed at the top. Therefore we can assume that we have 7 files that have entries within this dat file.
 
@@ -19,11 +19,11 @@ Looking further past the header, we can see that there are several zip files con
 ### Header
 To continue working on analyzing the file, we have to begin working on the header format. We can use 010 for this, and use some resizing to recognize the patterns (looking for pattern alignments). Resizing the width of the hex view will allow us do see some initial patterns in the header, and start looking at the values within it:
 
-screenshot
+![header alignment](https://github.com/kablaa/CTF-Workshop/blob/restructure_repository/Forensics/Writeups/UndocumentedFormats/GetGudKid/header_entry_alignment_no_color.PNG)
 
 Looking at this, we can see clear a clear pattern between what appear to be the entries for what the dat file contains. However, we don't know what the values are. This is ok, we can add bookmarks for each header entry and add a color so we can begin analyzing the values of each header entry:
 
-screenshot
+![header alignment with highlighting](https://github.com/kablaa/CTF-Workshop/blob/restructure_repository/Forensics/Writeups/UndocumentedFormats/GetGudKid/header_entry_alignment.PNG)
 
 (You can see in red that there is extra stuff past the file signature, so we note that and move on)
 
