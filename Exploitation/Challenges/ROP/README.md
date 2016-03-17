@@ -1,0 +1,4 @@
+These challenges will require you to alter the program flow by overwriting a return address to get a shell.
+
+chal1: rop1
+chal2: memory
