@@ -1,8 +1,0 @@
-Reverse Engineer each binary using gdb and objdump. When you think you have the correct source code, check your solution against the actual source code
-
-chal-1: hello_world
-chal-2: if_then
-chal-3: loop
-The next two challenges require a correct input to get the flag (yes you can read the flag..but solve the challenge anyways)
-chal-4: get_flag 
-chal-5: fd 
