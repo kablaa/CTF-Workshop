@@ -71,3 +71,26 @@ If you successfully get your virtual machine up and running, you may notice that
 ### Learning Linux Commands
 
 [Learning the Linux command line](http://www.linuxcommand.org) is absolutely vital to cyber security of any kind. Pretty much every executable in a CTF will be run via the command line, and most tools available for CTFs are command line based. Plus, you can make the text green and look just like those super leet hackers you see in the movies all the time. If you haven't used a terminal before, we would highly recommend spending some time learning your way around the Linux environment. In particular, opening and [editing files](https://en.wikipedia.org/wiki/Vim_%28text_editor%29), running executables, and using [git](https://git-scm.com/) will be essential for the remainder of this guide.
+
+
+###Level 1: **reversing**
+
+###Level 2: **scripting**
+
+###Level 3: **buffer_overflow**
+
+###Level 4: **ROP**
+
+###Level 5: **shell_code**
+
+###Level 6: **True_ROP**
+
+###Level 7: **heap**
+
+##More Resources: 
+
+[Smash the Stack](https://avicoder.me/2016/02/01/smashsatck-revived/)
+
+[Owen Redwood Lectures](http://www.cs.fsu.edu/~redwood/OffensiveComputerSecurity/lectures.html)
+    
+
