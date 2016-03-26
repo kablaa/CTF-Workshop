@@ -1,4 +1,4 @@
-# 1 Learn Yo-Self Some Assembly
+#  Learn Yo-Self Some Assembly
 
 Learning [Assembly](http://www.swansontec.com/sprogram.html) is probably the most difficult and time consuming challenge for noobies. It can be incredibly intimidating to see hundreds of lines of low level system instructions. But take heart! The truth is, while reading and understanding Assembly can be very time consuming and tedious, it's not very complicated. There are really only a handful of instructions that you need to know off the top of your head. The real challenge is understanding and being able to visualize the stack. This is a topic that is disgracefully glossed over by most introductory programming classes and tutorials. However, with practice and patience, you will find that reading assembly can become almost second nature.
 
@@ -6,7 +6,7 @@ Learning [Assembly](http://www.swansontec.com/sprogram.html) is probably the mos
 
 Again, Google is your best friend. The best advise for learning
 
-###2 Getting Some Tools
+### Getting Some Tools
 
 #### Objdump
 `objdump` is a critical tool for most things regarding executables. It allows you to convert the executable into it's assembly equivalent, allowing you to read the instructions it will be executing when it is running. The main command that will be used is:
@@ -28,7 +28,7 @@ a.out: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked 
 ```
 
 
-### 3 Dynamic Analysis
+###  Dynamic Analysis
 
 Performing Dynamic Analysis involves examining and attempting to understand the inner workings of a binary while it is being run. This process usually involves using a [debugger](https://en.wikipedia.org/wiki/Debugger) to examine the states of registers, the stack, and the program flow at certain points during execution.
 
@@ -43,6 +43,6 @@ Performing Dynamic Analysis involves examining and attempting to understand the 
 
 PEDA stands for Python Exploit Development Assistance. This tool will make your life exceptionally easier during the debugging process. You can clone it from the [github repository](https://github.com/longld/peda) and follow the installation instructions on the README. For more information on PEDA, check out [this](http://security.cs.pub.ro/hexcellents/wiki/kb/toolset/peda) tutorial. Note that PEDA requires Python version 2.x, so if you are currently using Python 3.x, you will have to switch your version.
 
-### 4 Practice
+###  Practice
 
 Reversing binaries is inherently difficult, and learning to do it efficiently takes a great deal of time and practice. We have compiled a set of binaries that we suggest you start reversing. You can find them by navigating to the *reversing* directory. Then, read TODO.txt and get to work! We also suggest spending as much time as possible on sites like [crackmes.de](http://www.crackmes.de) and [reversing.kr](http://reversing.kr/) as well as writing and reversing your own binaries. There are even several [books](http://www.ece.ualberta.ca/~marcin/aikonsoft/reverse.pdf) and [tutorials](http://manoharvanga.com/hackme/) written and on the subject of reversing Linux binaries.
