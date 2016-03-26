@@ -1,4 +1,4 @@
-# . Python Scripting
+#  Python Scripting
 
  Knowing at least one scripting language will make your life exceptionally easier no matter which field of Computer Science you choose to pursue. Playing CTFs without knowing one is almost impossible. Before we get into Python, let's get this out of the way...
 
@@ -54,7 +54,7 @@ This will [pipe](http://ryanstutorials.net/linuxtutorial/piping.php) the output 
 
 
 
-## 2. Practice
+##  Practice
 
  Your next task is to practice your scripting skills. Navigate to the *scripting* directory. For this set of challenges, you will be using `socat` to create a network socket, listen on `port 1234` and run the executable. To do this, first make sure you have socat installed. On Ubuntu:
 
