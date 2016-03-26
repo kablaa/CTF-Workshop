@@ -77,15 +77,7 @@ If you successfully get your virtual machine up and running, you may notice that
 
 ###Level 2: **scripting**
 
-###Level 3: **buffer_overflow**
-
-###Level 4: **ROP**
-
-###Level 5: **shell_code**
-
-###Level 6: **True_ROP**
-
-###Level 7: **heap**
+###Level 3: **Exploitation**
 
 ##More Resources: 
 
