@@ -1,4 +1,22 @@
 [![hackucf logo](https://github.com/kablaa/CTF-Workshop/blob/master/Exploitation/HackUCF.png)](http://www.hackucf.org)
+
+**Requirements**:
+    Linux, gcc, socat, and gcc-multilib to run and create 32 bit executables.
+
+To get gcc-multilib on Ubuntu, you may run:
+
+    sudo apt-get install gcc-multilib
+
+Otherwise you will have to Google for the installation instructions specific to your distro.
+
+##Setup:
+
+    git clone https://github.com/kablaa/CTF-Workshop.git ~/Workshops
+
+
+
+
+
 # Welcome!
 
 This is a guide that was written with intention of taking you through the process of learning how to play [Capture the Flag](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) (CTF). This is by no means intended to be a comprehensive tutorial. Our intention here is simply to provide you with the tools you need to become familiar with the game and get started on your quest to become a leet hacker.
