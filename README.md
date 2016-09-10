@@ -86,3 +86,6 @@ If you successfully get your virtual machine up and running, you may notice that
 [Owen Redwood Lectures](http://www.cs.fsu.edu/~redwood/OffensiveComputerSecurity/lectures.html)
     
 
+[Really good Youtube series](https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN)
+
+[shamelss self promotion](https://www.youtube.com/watch?v=75gBFiFtAb8)
