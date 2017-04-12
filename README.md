@@ -1,7 +1,6 @@
 [![hackucf logo](https://github.com/kablaa/CTF-Workshop/blob/master/Exploitation/HackUCF.png)](http://www.hackucf.org)
 
-## Read the full introduction
-https://hackmy.world
+## Read the full introduction at [Hack My World](https://hackmy.world/projects/tutorial.php)
 
 **Requirements**:
     Linux, gcc, socat, and gcc-multilib to run and create 32 bit executables.
