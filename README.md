@@ -20,7 +20,7 @@ Otherwise you will have to Google for the installation instructions specific to 
 
 
 # Welcome!
-
+Amigos
 This is a guide that was written with intention of taking you through the process of learning how to play [Capture the Flag](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) (CTF). This is by no means intended to be a comprehensive tutorial. Our intention here is simply to provide you with the tools you need to become familiar with the game and get started on your quest to become a leet hacker.
 
 ### Prerequisites
