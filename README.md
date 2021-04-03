@@ -11,7 +11,7 @@ To get gcc-multilib on Ubuntu, you may run:
 
 Otherwise you will have to Google for the installation instructions specific to your distro.
 
-##Setup:
+## Setup:
 
     git clone https://github.com/kablaa/CTF-Workshop.git ~/Workshops
 
