@@ -28,6 +28,11 @@ This is a guide that was written with intention of taking you through the proces
 This guide assumes that you have a working knowledge of the C programming language. We do not expect you to be an enterprise level developer; however, we will assume a working knowledge of functions, variables, pointers, etc. A basic understanding of [Python](http://www.python.org) is also highly recommended. While we will be going over the aspects of Python scripting that are most important to CTFs, reading through a few [tutorials](http://www.tutorialspoint.com/python) will be extremely helpful. If you have never programmed before, or do not feel you are comfortable with these concepts, the great interwebs is full of comprehensive [tutorials and guides](http://www.tutorialspoint.com/computer_programming/). A computer capable of handling a Linux virtual machine is also required.
 
 
+
+
+
+
+
 ### What is Capture the Flag?
 
 CTFs are competitions in which players are given challenges related to several fields of cyber security. [Challenges](http://www.github.com/ctfs) usually fall into one of the following categories:
@@ -91,3 +96,8 @@ If you successfully get your virtual machine up and running, you may notice that
 [Really good Youtube series](https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN)
 
 [shamelss self promotion](https://www.youtube.com/watch?v=75gBFiFtAb8)
+
+
+
+C Programming Tutorials – Learn C Programming For Free – Course
+https://www.itjd.in/c-programming-tutorials-learn-c-programming-for-free-course/
