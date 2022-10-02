@@ -25,7 +25,7 @@ This is a guide that was written with intention of taking you through the proces
 
 ### Prerequisites
 
-This guide assumes that you have a working knowledge of the C programming language. We do not expect you to be an enterprise level developer; however, we will assume a working knowledge of functions, variables, pointers, etc. A basic understanding of [Python](http://www.python.org) is also highly recommended. While we will be going over the aspects of Python scripting that are most important to CTFs, reading through a few [tutorials](http://www.tutorialspoint.com/python) will be extremely helpful. If you have never programmed before, or do not feel you are comfortable with these concepts, the great interwebs is full of comprehensive [tutorials and guides](http://www.tutorialspoint.com/computer_programming/). A computer capable of handling a Linux virtual machine is also required.
+This guide assumes that you have a working knowledge of the [C programming language](https://www.scaler.com/topics/c/). We do not expect you to be an enterprise level developer; however, we will assume a working knowledge of functions, variables, pointers, etc. A basic understanding of [Python](http://www.python.org) is also highly recommended. While we will be going over the aspects of Python scripting that are most important to CTFs, reading through a few [tutorials](http://www.tutorialspoint.com/python) will be extremely helpful. If you have never programmed before, or do not feel you are comfortable with these concepts, the great interwebs is full of comprehensive [tutorials and guides](http://www.tutorialspoint.com/computer_programming/). A computer capable of handling a Linux virtual machine is also required.
 
 
 ### What is Capture the Flag?
